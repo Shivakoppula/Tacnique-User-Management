@@ -2,384 +2,346 @@
 
 ## Overview
 
-The User Management Dashboard is a responsive React-based web application developed to manage user information efficiently. The application allows users to perform complete CRUD (Create, Read, Update, Delete) operations while interacting with the JSONPlaceholder REST API. Since JSONPlaceholder is a mock API, Local Storage is used to persist user data across page refreshes.
+User Management Dashboard is a React.js web application built for managing user records in a clean and responsive dashboard interface. The project supports user authentication, protected routing, user listing, searching, filtering, sorting, pagination, adding users, editing users, deleting users, and logout confirmation.
 
-The application provides a modern and responsive user interface with features like search, filtering, sorting, pagination, client-side validation, and unique email verification.
+The project uses the JSONPlaceholder REST API for initial user data. Because JSONPlaceholder is a mock API and does not permanently save changes, the application stores updated user data in Local Storage after create, update, and delete operations.
+
+---
+
+## Login Details
+
+Use the following credentials to access the dashboard:
+
+- Username: `Admin`
+- Password: `admin@123`
+
+If a user tries to open the dashboard directly without login, the application redirects to the login page. After successful login, the user is navigated to the home dashboard.
 
 ---
 
 ## Features
 
-* View all users in a responsive table
-* Add a new user
-* Edit existing user details
-* Delete users with confirmation popup
-* Search users by First Name, Last Name, Email, or Department
-* Filter users using multiple fields
-* Sort users by First Name, Last Name, Email, and Department
-* Pagination with page size options:
-
-  * 10
-  * 25
-  * 50
-  * 100
-* Client-side form validation
-* Unique email validation
-* Responsive design for Desktop, Tablet, and Mobile
-* Modern dashboard UI with gradients and animations
-* Local Storage integration for persistent data
-* JSONPlaceholder API integration
-* Error handling and loading states
+- Admin login page with username and password validation
+- Protected home route using React Router
+- Session-based login state using Session Storage
+- Logout button in the dashboard header
+- Logout confirmation popup with Yes and No actions
+- View users in a responsive table
+- Add new user details
+- Edit existing user details
+- Delete user details with confirmation popup
+- Display serial numbers correctly after deleting users
+- Search users by first name, last name, email, or department
+- Filter users by first name, last name, email, and department
+- Sort users by first name, last name, email, and department
+- Pagination with multiple page size options
+- Client-side form validation
+- Duplicate email validation
+- Loading and error states
+- Local Storage support for persistent user changes
+- Responsive UI for desktop, tablet, and mobile screens
 
 ---
 
-## Technologies Used
+## Technologies and Libraries Used
 
 ### Frontend
 
-* React.js
-* JavaScript (ES6+)
-* HTML5
-* CSS3
+- React.js
+- JavaScript
+- HTML5
+- Vite
+
+### Styling
+
+- Tailwind CSS
+- Tailwind CSS utilities are used instead of separate normal CSS files
+- Responsive design, gradients, shadows, hover effects, popups, and animations are implemented using Tailwind classes
 
 ### Libraries
 
-* Axios
-* React Hooks
+- Axios
+- React Router DOM
+- React Hooks
+- Tailwind CSS
+- @tailwindcss/vite
+- Oxlint
 
 ### API
 
-* JSONPlaceholder REST API
+- JSONPlaceholder REST API
 
----
+API endpoint:
 
-## Project Structure
-
-```
-user-management-dashboard
-│
-├── public
-│
-├── src
-│
-├── api
-│   └── userService.js
-│
-├── components
-│   ├── Header.jsx
-│   ├── SearchBar.jsx
-│   ├── FilterPopup.jsx
-│   ├── UserTable.jsx
-│   ├── UserRow.jsx
-│   ├── UserForm.jsx
-│   ├── Pagination.jsx
-│   └── ConfirmDelete.jsx
-│
-├── styles
-│   └── app.css
-│
-├── utils
-│   └── validators.js
-│
-├── App.jsx
-├── main.jsx
-│
-└── README.md
-```
-
----
-
-## Installation
-
-Clone the repository
-
-```bash
-git clone https://github.com/your-username/user-management-dashboard.git
-```
-
-Move into the project directory
-
-```bash
-cd user-management-dashboard
-```
-
-Install dependencies
-
-```bash
-npm install
-```
-
-Start the development server
-
-```bash
-npm run dev
-```
-
-Open your browser
-
-```
-http://localhost:5173
-```
-
----
-
-## API Endpoint
-
-```
+```text
 https://jsonplaceholder.typicode.com/users
 ```
 
 ---
 
-## Implemented Functionalities
+## Project Structure
+
+```text
+user_management
+│
+├── public
+│
+├── src
+│   ├── api
+│   │   └── userService.js
+│   │
+│   ├── assets
+│   │   ├── hero.png
+│   │   ├── react.svg
+│   │   └── vite.svg
+│   │
+│   ├── components
+│   │   ├── ConfirmDelete.jsx
+│   │   ├── ConfirmLogout.jsx
+│   │   ├── FilterPopup.jsx
+│   │   ├── Header.jsx
+│   │   ├── LoginPage.jsx
+│   │   ├── Pagination.jsx
+│   │   ├── ProtectedRoute.jsx
+│   │   ├── SearchBar.jsx
+│   │   ├── UserForm.jsx
+│   │   ├── UserRow.jsx
+│   │   └── UserTable.jsx
+│   │
+│   ├── utils
+│   │   └── validators.js
+│   │
+│   ├── App.jsx
+│   ├── AppRouter.jsx
+│   ├── index.css
+│   └── main.jsx
+│
+├── .gitignore
+├── .oxlintrc.json
+├── index.html
+├── package.json
+├── package-lock.json
+├── vite.config.js
+└── README.md
+```
+
+---
+
+## Main Functionalities
+
+### Authentication
+
+The application has a login page with fixed admin credentials. React Router is used to protect the dashboard route. If the user is not logged in, the app redirects to the login page.
 
 ### User Management
 
-* Display all users
-* Add new user
-* Edit user details
-* Delete user
+The dashboard allows users to:
+
+- View all users
+- Add a new user
+- Edit user details
+- Delete user details
+
+After a user is deleted, the displayed serial numbers are updated automatically so the table continues in proper order.
 
 ### Search
 
-Search is performed in real time using:
+Search works in real time using:
 
-* First Name
-* Last Name
-* Email
-* Department
+- First Name
+- Last Name
+- Email
+- Department
 
-### Filter
+### Filtering
 
 Users can be filtered using:
 
-* First Name
-* Last Name
-* Email
-* Department
+- First Name
+- Last Name
+- Email
+- Department
 
 ### Sorting
 
 Sorting is available for:
 
-* First Name
-* Last Name
-* Email
-* Department
+- First Name
+- Last Name
+- Email
+- Department
 
-Both Ascending and Descending order are supported.
+Both ascending and descending order are supported.
 
 ### Pagination
 
-Available page sizes:
+Pagination is implemented with page size options such as:
 
-* 10
-* 25
-* 50
-* 100
+- 10
+- 25
+- 50
+- 100
 
 ### Form Validation
 
-The application validates:
+The user form validates:
 
-* First Name
-* Last Name
-* Email format
-* Department
-* Unique Email
+- First name is required
+- First name must contain at least 2 characters
+- First name allows only alphabets and spaces
+- Last name is required
+- Last name must contain at least 2 characters
+- Last name allows only alphabets and spaces
+- Email is required
+- Email must be in valid format
+- Email must be unique
+- Department must be selected
 
 ### Local Storage
 
-User data is stored in Local Storage.
+Local Storage is used to keep user data available after page refresh.
 
-Whenever a user is:
+The application updates Local Storage when a user is:
 
-* Added
-* Updated
-* Deleted
+- Added
+- Updated
+- Deleted
 
-the Local Storage is updated automatically.
+On application startup, the dashboard first checks Local Storage. If data is available, it loads from Local Storage. If not, it fetches initial data from JSONPlaceholder.
 
-On application startup, data is loaded from Local Storage if available.
+### Logout
 
----
+The dashboard includes a red Logout button at the top-right side of the header. When clicked, a confirmation popup is shown with:
 
-## Assumptions
+- No button in red color
+- Yes button in green color
 
-Since JSONPlaceholder does not provide separate fields for First Name, Last Name, and Department, the following assumptions were made:
-
-* The full name is split into First Name and Last Name.
-* Departments are assigned from predefined values:
-
-  * IT
-  * HR
-  * Finance
-  * Sales
-  * Marketing
-* Local Storage is used to persist data because JSONPlaceholder does not permanently save changes.
+If the user confirms logout, the session authentication value is removed and the user is redirected to the login page.
 
 ---
 
 ## Error Handling
 
-The application handles:
+The project handles errors in the following areas:
 
-* API request failures
-* Empty form fields
-* Invalid email addresses
-* Duplicate email addresses
-* Invalid department selection
-
----
-
-## Responsive Design
-
-The application is fully responsive and supports:
-
-* Desktop
-* Laptop
-* Tablet
-* Mobile
-
-Features include:
-
-* Responsive tables
-* Flexible layouts
-* Mobile-friendly forms
-* Adaptive pagination
-* Responsive filter popup
+- Shows a loading message while user data is being fetched
+- Shows a user-friendly error message if initial user loading fails
+- Handles API add, update, and delete failures
+- Saves changes locally when mock API operations cannot permanently persist data
+- Shows validation messages for empty or invalid form fields
+- Prevents duplicate email addresses
+- Shows an invalid credentials message on failed login
+- Uses confirmation dialogs before delete and logout actions
 
 ---
 
-## UI Highlights
+## UI and Styling
 
-* Modern Gradient Dashboard
-* Glassmorphism-inspired cards
-* Animated buttons
-* Hover effects
-* Smooth transitions
-* Responsive layout
-* Confirmation dialog
-* Gradient badges
-* Modern forms
-* Attractive pagination
+The project styling is implemented with Tailwind CSS instead of separate normal CSS styling files.
 
----
+UI highlights include:
 
-## Challenges Faced
-
-* JSONPlaceholder is a mock API and does not permanently store data.
-* Maintaining user changes after page refresh.
-* Implementing client-side unique email validation.
-* Managing search, sorting, filtering, and pagination together while maintaining application state.
-* Creating a fully responsive table for smaller screens.
+- Responsive dashboard layout
+- Gradient header
+- Modern login page
+- Styled search and filter sections
+- Responsive user table
+- Add and edit user modal
+- Delete confirmation modal
+- Logout confirmation modal
+- Button hover effects
+- Smooth popup animations
+- Mobile-friendly layout
 
 ---
 
-## Solution
+## Assumptions
 
-To overcome the API limitation:
+JSONPlaceholder provides user data in a different structure from this project form. Because of that:
 
-* Local Storage was implemented to store all user modifications.
-* CRUD operations update both the application state and Local Storage.
-* The dashboard first checks Local Storage before fetching data from the API.
+- The full name from the API is split into first name and last name
+- Departments are assigned manually from predefined department values
+- Local Storage is used because JSONPlaceholder does not permanently store added, edited, or deleted records
+
+Departments used in this project:
+
+- IT
+- HR
+- Finance
+- Sales
+- Marketing
+
+---
+
+## Challenges and Solutions
+
+### Challenge
+
+JSONPlaceholder is a mock API, so user changes are not permanently saved on the server.
+
+### Solution
+
+The application stores the updated user list in Local Storage so changes remain available after refreshing the page.
+
+### Challenge
+
+Users should not access the dashboard without login.
+
+### Solution
+
+Protected routing was added using React Router and Session Storage authentication state.
+
+### Challenge
+
+After deleting a user, visible table numbers should remain continuous.
+
+### Solution
+
+The table displays calculated serial numbers based on the current page index instead of directly showing the original API user id.
 
 ---
 
 ## Future Enhancements
 
-* Authentication and Authorization
-* Role-Based Access Control
-* Dark Mode
-* Export Users to Excel/PDF
-* Import Users using CSV
-* Server-side Pagination
-* Server-side Search
-* User Profile Images
-* Dashboard Statistics
-* Toast Notifications
-* Unit Testing
-* API Integration with a real backend
-
----
-
-## Git Commands
-
-Initialize repository
-
-```bash
-git init
-```
-
-Add files
-
-```bash
-git add .
-```
-
-Commit changes
-
-```bash
-git commit -m "Initial Commit"
-```
-
-Create main branch
-
-```bash
-git branch -M main
-```
-
-Add remote repository
-
-```bash
-git remote add origin https://github.com/your-username/user-management-dashboard.git
-```
-
-Push to GitHub
-
-```bash
-git push -u origin main
-```
+- Connect the project with a real backend API
+- Add role-based access control
+- Add password encryption and secure authentication
+- Add dashboard statistics
+- Add toast notifications
+- Add dark mode
+- Add user profile image upload
+- Export users to Excel or PDF
+- Import users using CSV
+- Add unit testing and integration testing
+- Add server-side search, filter, sorting, and pagination
 
 ---
 
 ## Deployment
 
-Build the application
+The project can be built for production using the Vite build command and deployed on platforms such as:
 
-```bash
-npm run build
-```
-
-Preview production build
-
-```bash
-npm run preview
-```
-
-The project can be deployed on:
-
-* Vercel
-* Netlify
-* GitHub Pages
-* Render
+- Vercel
+- Netlify
+- Render
+- GitHub Pages
 
 ---
 
 ## Author
 
-**Boosi Naresh**
+**Shiva Koppula**
 
-B.Tech - Computer Science Engineering (AI & ML)
+B.Tech Computer Science Engineering
 
-Malla Reddy College of Engineering
+Siddhartha Institute of Technology and Sciences
 
-Email: [bushinaresh68@gmail.com](mailto:bushinaresh68@gmail.com)
+Email: [shivakoppulagoud@gmail.com](mailto:shivakoppulagoud@gmail.com)
 
-Location: Khammam, Telangana
+Location: Ranga Reddy, Telangana
 
 ---
 
 ## Thank You
 
-Thank you for reviewing this project. This User Management Dashboard demonstrates React fundamentals, REST API integration, CRUD operations, responsive UI development, client-side validation, Local Storage management, and modern frontend development practices.
+Thank you for reviewing this User Management Dashboard project. This project demonstrates React.js fundamentals, protected routing, REST API integration, CRUD operations, Local Storage persistence, form validation, responsive Tailwind CSS styling, and modern frontend development practices.
