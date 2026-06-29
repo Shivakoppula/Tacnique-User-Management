@@ -1,4 +1,4 @@
-function Pagination({
+function UserListPagination({
   currentPage,
   totalPages,
   pageSize,
@@ -81,4 +81,4 @@ function Pagination({
   );
 }
 
-export default Pagination;
+export default UserListPagination;

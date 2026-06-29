@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function FilterPopup({ filters, setFilters }) {
+function UserFilterPanel({ filters, setFilters }) {
   const [showFilter, setShowFilter] = useState(false);
 
   const handleChange = (e) => {
@@ -111,4 +111,4 @@ function FilterPopup({ filters, setFilters }) {
   );
 }
 
-export default FilterPopup;
+export default UserFilterPanel;

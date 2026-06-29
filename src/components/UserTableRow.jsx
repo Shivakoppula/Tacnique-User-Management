@@ -1,4 +1,4 @@
-function UserRow({ user, displayId, onEdit, onDelete }) {
+function UserTableRow({ user, displayId, onEdit, onDelete }) {
   return (
     <tr className="transition duration-350 even:bg-[#fafcff] hover:scale-[1.003] hover:bg-[#eef5ff]">
 
@@ -44,4 +44,4 @@ function UserRow({ user, displayId, onEdit, onDelete }) {
   );
 }
 
-export default UserRow;
+export default UserTableRow;

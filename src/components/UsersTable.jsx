@@ -1,6 +1,6 @@
-import UserRow from "./UserRow";
+import UserTableRow from "./UserTableRow";
 
-function UserTable({
+function UsersTable({
   users,
   startIndex,
   sortField,
@@ -57,7 +57,7 @@ function UserTable({
             </tr>
           ) : (
             users.map((user, index) => (
-              <UserRow
+            <UserTableRow
                 key={user.id}
                 user={user}
                 displayId={startIndex + index + 1}
@@ -74,4 +74,4 @@ function UserTable({
   );
 }
 
-export default UserTable;
+export default UsersTable;

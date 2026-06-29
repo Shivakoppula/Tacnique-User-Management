@@ -1,4 +1,4 @@
-function ConfirmLogout({ onConfirm, onCancel }) {
+function LogoutConfirmationModal({ onConfirm, onCancel }) {
   return (
     <div className="fixed inset-0 z-[9999] flex h-full w-full animate-fade-in items-center justify-center bg-[#0f172a]/55 p-5 backdrop-blur-[6px]">
       <div className="w-full max-w-[460px] animate-popup rounded-3xl bg-white p-8 text-center shadow-[0_30px_60px_rgba(15,23,42,.25)] max-[576px]:rounded-[18px] max-[576px]:p-6">
@@ -32,4 +32,4 @@ function ConfirmLogout({ onConfirm, onCancel }) {
   );
 }
 
-export default ConfirmLogout;
+export default LogoutConfirmationModal;

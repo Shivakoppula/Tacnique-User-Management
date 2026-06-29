@@ -6,18 +6,18 @@ import {
   addUser,
   updateUser,
   deleteUser,
-} from "./api/userService";
+} from "./api/userApiService";
 
-import Header from "./components/Header";
-import SearchBar from "./components/SearchBar";
-import FilterPopup from "./components/FilterPopup";
-import UserTable from "./components/UserTable";
-import UserForm from "./components/UserForm";
-import Pagination from "./components/Pagination";
-import ConfirmDelete from "./components/ConfirmDelete";
-import ConfirmLogout from "./components/ConfirmLogout";
+import DashboardHeader from "./components/DashboardHeader";
+import UserSearchBar from "./components/UserSearchBar";
+import UserFilterPanel from "./components/UserFilterPanel";
+import UsersTable from "./components/UsersTable";
+import UserDetailsForm from "./components/UserDetailsForm";
+import UserListPagination from "./components/UserListPagination";
+import DeleteConfirmationModal from "./components/DeleteConfirmationModal";
+import LogoutConfirmationModal from "./components/LogoutConfirmationModal";
 
-function App() {
+function UserManagementDashboard() {
   const navigate = useNavigate();
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -320,19 +320,19 @@ function App() {
     return (
     <div className="mx-auto my-[35px] w-[95%] max-w-[1450px] max-md:my-5 max-md:w-[96%]">
 
-      <Header
+      <DashboardHeader
         onAdd={openAddForm}
         onLogout={() => setShowLogoutConfirm(true)}
       />
 
       <div className="mb-[25px] flex flex-wrap items-start gap-5 max-[992px]:flex-col">
 
-        <SearchBar
+        <UserSearchBar
           search={search}
           setSearch={setSearch}
         />
 
-        <FilterPopup
+        <UserFilterPanel
           filters={filters}
           setFilters={setFilters}
         />
@@ -354,7 +354,7 @@ function App() {
       {!loading && !error && (
         <>
 
-          <UserTable
+          <UsersTable
             users={currentUsers}
             startIndex={startIndex}
             sortField={sortField}
@@ -364,7 +364,7 @@ function App() {
             onDelete={setDeleteId}
           />
 
-          <Pagination
+          <UserListPagination
             currentPage={currentPage}
             totalPages={totalPages}
             pageSize={pageSize}
@@ -376,7 +376,7 @@ function App() {
       )}
 
       {showForm && (
-       <UserForm
+       <UserDetailsForm
       user={editingUser}
       users={users}
       onSave={handleSave}
@@ -385,14 +385,14 @@ function App() {
       )}
 
       {deleteId !== null && (
-        <ConfirmDelete
+        <DeleteConfirmationModal
           onConfirm={handleDelete}
           onCancel={() => setDeleteId(null)}
         />
       )}
 
       {showLogoutConfirm && (
-        <ConfirmLogout
+        <LogoutConfirmationModal
           onConfirm={handleLogout}
           onCancel={() => setShowLogoutConfirm(false)}
         />
@@ -402,4 +402,4 @@ function App() {
   );
 }
 
-export default App;
+export default UserManagementDashboard;

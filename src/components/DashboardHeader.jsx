@@ -1,4 +1,4 @@
-function Header({ onAdd, onLogout }) {
+function DashboardHeader({ onAdd, onLogout }) {
   return (
     <header className="relative mb-[35px] flex items-center justify-between overflow-hidden rounded-[22px] bg-[linear-gradient(135deg,#2563eb,#4f46e5,#7c3aed)] px-10 py-[30px] text-white shadow-[0_18px_40px_rgba(79,70,229,.25)] before:absolute before:-right-[70px] before:-top-[90px] before:h-[220px] before:w-[220px] before:rounded-full before:bg-white/8 before:content-[''] after:absolute after:-bottom-10 after:-left-10 after:h-[140px] after:w-[140px] after:rounded-full after:bg-white/5 after:content-[''] max-[992px]:flex-col max-[992px]:gap-[25px] max-[992px]:text-center max-md:p-[25px] max-[576px]:p-5">
 
@@ -34,4 +34,4 @@ function Header({ onAdd, onLogout }) {
   );
 }
 
-export default Header;
+export default DashboardHeader;

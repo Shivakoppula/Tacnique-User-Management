@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { validateForm } from "../utils/validators";
+import { validateForm } from "../utils/userFormValidator";
 
 const initialState = {
   firstName: "",
@@ -8,7 +8,7 @@ const initialState = {
   department: "",
 };
 
-function UserForm({
+function UserDetailsForm({
   user,
   users,
   onSave,
@@ -223,4 +223,4 @@ const handleSubmit = (e) => {
   );
 }
 
-export default UserForm;
+export default UserDetailsForm;

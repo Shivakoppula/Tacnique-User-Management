@@ -1,4 +1,4 @@
-function SearchBar({
+function UserSearchBar({
   search,
   setSearch,
 }) {
@@ -19,4 +19,4 @@ function SearchBar({
   );
 }
 
-export default SearchBar;
+export default UserSearchBar;

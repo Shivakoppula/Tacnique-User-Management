@@ -1,4 +1,4 @@
-function ConfirmDelete({ onConfirm, onCancel }) {
+function DeleteConfirmationModal({ onConfirm, onCancel }) {
   return (
     <div className="fixed inset-0 z-[9999] flex h-full w-full animate-fade-in items-center justify-center bg-[#0f172a]/55 p-5 backdrop-blur-[6px]">
 
@@ -40,4 +40,4 @@ function ConfirmDelete({ onConfirm, onCancel }) {
   );
 }
 
-export default ConfirmDelete;
+export default DeleteConfirmationModal;

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
-function LoginPage() {
+function AdministratorLoginPage() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -117,4 +117,4 @@ function LoginPage() {
   );
 }
 
-export default LoginPage;
+export default AdministratorLoginPage;
