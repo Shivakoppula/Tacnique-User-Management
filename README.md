@@ -2,9 +2,116 @@
 
 ## Overview
 
-User Management Dashboard is a React.js web application built for managing user records in a clean and responsive dashboard interface. The project supports user authentication, protected routing, user listing, searching, filtering, sorting, pagination, adding users, editing users, deleting users, and logout confirmation.
+User Management Dashboard is a React.js web application built for managing user records in a clean and responsive dashboard interface. The project supports authentication, protected routing, user listing, searching, filtering, sorting, pagination, adding users, editing users, deleting users, and logout confirmation.
 
 The project uses the JSONPlaceholder REST API for initial user data. Because JSONPlaceholder is a mock API and does not permanently save changes, the application stores updated user data in Local Storage after create, update, and delete operations.
+
+---
+
+## Setup Process
+
+Follow this setup process before running the project.
+
+### 1. Check Node.js and npm
+
+Before running this project, make sure Node.js and npm are installed on your system.
+
+You can check them by running:
+
+```bash
+node -v
+npm -v
+```
+
+### 2. Open the project folder
+
+Open the `user_management` folder in VS Code or any code editor.
+
+Project folder:
+
+```text
+user_management
+```
+
+### 3. Install project dependencies
+
+Run this command from the project root folder:
+
+```bash
+npm install
+```
+
+This installs all required dependencies used in this project, including:
+
+- React
+- React DOM
+- Vite
+- Axios
+- React Router DOM
+- Tailwind CSS
+- @tailwindcss/vite
+- Oxlint
+
+---
+
+## Run Process
+
+Follow this run process after completing the setup.
+
+### 1. Start the development server
+
+Run:
+
+```bash
+npm run dev
+```
+
+This starts the Vite development server.
+
+### 2. Open the application in browser
+
+After starting the server, open the local URL shown in the terminal.
+
+Default Vite URL:
+
+```text
+http://localhost:5173
+```
+
+### 3. Login to the dashboard
+
+Use the following login credentials:
+
+- Username: `Admin`
+- Password: `admin@123`
+
+After successful login, the application navigates to the User Management Dashboard.
+
+### 4. Run lint check
+
+To check code quality using Oxlint, run:
+
+```bash
+npm run lint
+```
+
+### 5. Build the project for production
+
+To create a production build, run:
+
+```bash
+npm run build
+```
+
+The production-ready output is generated inside the `dist` folder.
+
+### 6. Preview the production build
+
+To preview the production build locally, run:
+
+```bash
+npm run preview
+```
 
 ---
 
@@ -83,46 +190,46 @@ https://jsonplaceholder.typicode.com/users
 
 ```text
 user_management
-│
-├── public
-│
-├── src
-│   ├── api
-│   │   └── userService.js
-│   │
-│   ├── assets
-│   │   ├── hero.png
-│   │   ├── react.svg
-│   │   └── vite.svg
-│   │
-│   ├── components
-│   │   ├── ConfirmDelete.jsx
-│   │   ├── ConfirmLogout.jsx
-│   │   ├── FilterPopup.jsx
-│   │   ├── Header.jsx
-│   │   ├── LoginPage.jsx
-│   │   ├── Pagination.jsx
-│   │   ├── ProtectedRoute.jsx
-│   │   ├── SearchBar.jsx
-│   │   ├── UserForm.jsx
-│   │   ├── UserRow.jsx
-│   │   └── UserTable.jsx
-│   │
-│   ├── utils
-│   │   └── validators.js
-│   │
-│   ├── App.jsx
-│   ├── AppRouter.jsx
-│   ├── index.css
-│   └── main.jsx
-│
-├── .gitignore
-├── .oxlintrc.json
-├── index.html
-├── package.json
-├── package-lock.json
-├── vite.config.js
-└── README.md
+|
+|-- public
+|
+|-- src
+|   |-- api
+|   |   |-- userService.js
+|   |
+|   |-- assets
+|   |   |-- hero.png
+|   |   |-- react.svg
+|   |   |-- vite.svg
+|   |
+|   |-- components
+|   |   |-- ConfirmDelete.jsx
+|   |   |-- ConfirmLogout.jsx
+|   |   |-- FilterPopup.jsx
+|   |   |-- Header.jsx
+|   |   |-- LoginPage.jsx
+|   |   |-- Pagination.jsx
+|   |   |-- ProtectedRoute.jsx
+|   |   |-- SearchBar.jsx
+|   |   |-- UserForm.jsx
+|   |   |-- UserRow.jsx
+|   |   |-- UserTable.jsx
+|   |
+|   |-- utils
+|   |   |-- validators.js
+|   |
+|   |-- App.jsx
+|   |-- AppRouter.jsx
+|   |-- index.css
+|   |-- main.jsx
+|
+|-- .gitignore
+|-- .oxlintrc.json
+|-- index.html
+|-- package.json
+|-- package-lock.json
+|-- vite.config.js
+|-- README.md
 ```
 
 ---
@@ -135,103 +242,38 @@ The application has a login page with fixed admin credentials. React Router is u
 
 ### User Management
 
-The dashboard allows users to:
+The dashboard allows users to view, add, edit, and delete users. After a user is deleted, the displayed serial numbers are updated automatically so the table continues in proper order.
 
-- View all users
-- Add a new user
-- Edit user details
-- Delete user details
+### Search, Filter, Sort, and Pagination
 
-After a user is deleted, the displayed serial numbers are updated automatically so the table continues in proper order.
-
-### Search
-
-Search works in real time using:
-
-- First Name
-- Last Name
-- Email
-- Department
-
-### Filtering
-
-Users can be filtered using:
-
-- First Name
-- Last Name
-- Email
-- Department
-
-### Sorting
-
-Sorting is available for:
-
-- First Name
-- Last Name
-- Email
-- Department
-
-Both ascending and descending order are supported.
-
-### Pagination
-
-Pagination is implemented with page size options such as:
-
-- 10
-- 25
-- 50
-- 100
+Users can search, filter, and sort by first name, last name, email, and department. Pagination is available with page size options such as 10, 25, 50, and 100.
 
 ### Form Validation
 
-The user form validates:
-
-- First name is required
-- First name must contain at least 2 characters
-- First name allows only alphabets and spaces
-- Last name is required
-- Last name must contain at least 2 characters
-- Last name allows only alphabets and spaces
-- Email is required
-- Email must be in valid format
-- Email must be unique
-- Department must be selected
+The user form validates required fields, name length, alphabet-only names, valid email format, unique email, and department selection.
 
 ### Local Storage
 
-Local Storage is used to keep user data available after page refresh.
-
-The application updates Local Storage when a user is:
-
-- Added
-- Updated
-- Deleted
-
-On application startup, the dashboard first checks Local Storage. If data is available, it loads from Local Storage. If not, it fetches initial data from JSONPlaceholder.
+Local Storage is used to keep user data available after page refresh. The application updates Local Storage when a user is added, updated, or deleted.
 
 ### Logout
 
-The dashboard includes a red Logout button at the top-right side of the header. When clicked, a confirmation popup is shown with:
-
-- No button in red color
-- Yes button in green color
-
-If the user confirms logout, the session authentication value is removed and the user is redirected to the login page.
+The dashboard includes a red Logout button. When clicked, a confirmation popup is shown with a red No button and a green Yes button. If logout is confirmed, the session authentication value is removed and the user is redirected to the login page.
 
 ---
 
 ## Error Handling
 
-The project handles errors in the following areas:
+The project handles:
 
-- Shows a loading message while user data is being fetched
-- Shows a user-friendly error message if initial user loading fails
-- Handles API add, update, and delete failures
-- Saves changes locally when mock API operations cannot permanently persist data
-- Shows validation messages for empty or invalid form fields
-- Prevents duplicate email addresses
-- Shows an invalid credentials message on failed login
-- Uses confirmation dialogs before delete and logout actions
+- Loading state while user data is being fetched
+- User-friendly message if initial user loading fails
+- API add, update, and delete failures
+- Local saving when mock API operations cannot permanently persist data
+- Validation messages for empty or invalid form fields
+- Duplicate email validation
+- Invalid login credentials
+- Confirmation dialogs before delete and logout actions
 
 ---
 
@@ -255,52 +297,6 @@ UI highlights include:
 
 ---
 
-## Assumptions
-
-JSONPlaceholder provides user data in a different structure from this project form. Because of that:
-
-- The full name from the API is split into first name and last name
-- Departments are assigned manually from predefined department values
-- Local Storage is used because JSONPlaceholder does not permanently store added, edited, or deleted records
-
-Departments used in this project:
-
-- IT
-- HR
-- Finance
-- Sales
-- Marketing
-
----
-
-## Challenges and Solutions
-
-### Challenge
-
-JSONPlaceholder is a mock API, so user changes are not permanently saved on the server.
-
-### Solution
-
-The application stores the updated user list in Local Storage so changes remain available after refreshing the page.
-
-### Challenge
-
-Users should not access the dashboard without login.
-
-### Solution
-
-Protected routing was added using React Router and Session Storage authentication state.
-
-### Challenge
-
-After deleting a user, visible table numbers should remain continuous.
-
-### Solution
-
-The table displays calculated serial numbers based on the current page index instead of directly showing the original API user id.
-
----
-
 ## Future Enhancements
 
 - Connect the project with a real backend API
@@ -314,17 +310,6 @@ The table displays calculated serial numbers based on the current page index ins
 - Import users using CSV
 - Add unit testing and integration testing
 - Add server-side search, filter, sorting, and pagination
-
----
-
-## Deployment
-
-The project can be built for production using the Vite build command and deployed on platforms such as:
-
-- Vercel
-- Netlify
-- Render
-- GitHub Pages
 
 ---
 
