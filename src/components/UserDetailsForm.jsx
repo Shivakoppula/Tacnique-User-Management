@@ -77,7 +77,7 @@ const handleSubmit = (e) => {
           </h2>
 
           <button
-            className="h-10 w-10 cursor-pointer rounded-full border-0 bg-[#f1f5f9] text-lg text-[#64748b] transition duration-350 ease-in-out hover:rotate-90 hover:bg-[#ef4444] hover:text-white active:scale-[.96]"
+            className="h-10 w-10 cursor-pointer rounded-full border-0 bg-[#f1f5f9] text-lg text-[#64748b] brightness-100 transition duration-350 ease-in-out hover:rotate-90 hover:bg-[#ef4444] hover:text-white hover:brightness-75 active:scale-[.96]"
             onClick={onClose}
           >
             ✖
@@ -198,7 +198,7 @@ const handleSubmit = (e) => {
 
             <button
               type="submit"
-              className="cursor-pointer rounded-xl border-0 bg-[linear-gradient(135deg,#2563eb,#4f46e5)] px-6 py-[13px] text-[15px] font-semibold text-white transition-[transform,box-shadow] duration-350 ease-in-out hover:-translate-y-[3px] hover:shadow-[0_15px_25px_rgba(37,99,235,.28)] active:scale-[.96] max-md:w-full"
+              className="cursor-pointer rounded-xl border-0 bg-[linear-gradient(135deg,#2563eb,#4f46e5)] px-6 py-[13px] text-[15px] font-semibold text-white brightness-100 transition-[transform,box-shadow,filter] duration-350 ease-in-out hover:-translate-y-[3px] hover:brightness-75 hover:shadow-[0_15px_25px_rgba(37,99,235,.28)] active:scale-[.96] max-md:w-full"
             >
               {user
                 ? "Update User"
@@ -207,7 +207,7 @@ const handleSubmit = (e) => {
 
             <button
               type="button"
-              className="cursor-pointer rounded-xl border-0 bg-[#e2e8f0] px-6 py-[13px] text-[15px] font-semibold text-[#334155] transition duration-350 ease-in-out hover:bg-[#cbd5e1] active:scale-[.96] max-md:w-full"
+              className="cursor-pointer rounded-xl border-0 bg-[#e2e8f0] px-6 py-[13px] text-[15px] font-semibold text-[#334155] brightness-100 transition duration-350 ease-in-out hover:bg-[#cbd5e1] hover:brightness-75 active:scale-[.96] max-md:w-full"
               onClick={onClose}
             >
               Cancel

@@ -23,7 +23,7 @@ function UserFilterPanel({ filters, setFilters }) {
     <div className="relative max-[992px]:w-full">
 
       <button
-        className="cursor-pointer rounded-[40px] border-0 bg-[linear-gradient(135deg,#06b6d4,#2563eb)] px-[25px] py-[15px] font-semibold text-white shadow-[0_10px_25px_rgba(37,99,235,.2)] transition-transform duration-350 ease-in-out hover:-translate-y-[3px] active:scale-[.96] max-[992px]:w-full"
+        className="cursor-pointer rounded-[40px] border-0 bg-[linear-gradient(135deg,#06b6d4,#2563eb)] px-[25px] py-[15px] font-semibold text-white brightness-100 shadow-[0_10px_25px_rgba(37,99,235,.2)] transition-[transform,filter] duration-350 ease-in-out hover:-translate-y-[3px] hover:brightness-75 active:scale-[.96] max-[992px]:w-full"
         onClick={() => setShowFilter(!showFilter)}
       >
         {showFilter ? "✖ Close Filters" : "⚙ Filters"}
@@ -96,7 +96,7 @@ function UserFilterPanel({ filters, setFilters }) {
           <div className="mt-[22px] flex justify-end">
 
             <button
-              className="cursor-pointer rounded-[30px] border-0 bg-[linear-gradient(135deg,#ef4444,#dc2626)] px-6 py-3 font-semibold text-white transition-[transform,box-shadow] duration-350 ease-in-out hover:-translate-y-0.5 hover:shadow-[0_12px_24px_rgba(239,68,68,.28)] active:scale-[.96]"
+              className="cursor-pointer rounded-[30px] border-0 bg-[linear-gradient(135deg,#ef4444,#dc2626)] px-6 py-3 font-semibold text-white brightness-100 transition-[transform,box-shadow,filter] duration-350 ease-in-out hover:-translate-y-0.5 hover:brightness-75 hover:shadow-[0_12px_24px_rgba(239,68,68,.28)] active:scale-[.96]"
               onClick={clearFilters}
             >
               Reset

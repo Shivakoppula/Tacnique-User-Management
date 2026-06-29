@@ -19,14 +19,14 @@ function DeleteConfirmationModal({ onConfirm, onCancel }) {
         <div className="flex justify-center gap-[15px] max-md:flex-col">
 
           <button
-            className="cursor-pointer rounded-xl border-0 bg-[#e2e8f0] px-[26px] py-[13px] font-semibold text-[#334155] transition duration-350 ease-in-out hover:bg-[#cbd5e1] active:scale-[.96] max-md:w-full"
+            className="cursor-pointer rounded-xl border-0 bg-[#e2e8f0] px-[26px] py-[13px] font-semibold text-[#334155] brightness-100 transition duration-350 ease-in-out hover:bg-[#cbd5e1] hover:brightness-75 active:scale-[.96] max-md:w-full"
             onClick={onCancel}
           >
             Cancel
           </button>
 
           <button
-            className="cursor-pointer rounded-xl border-0 bg-[linear-gradient(135deg,#ef4444,#dc2626)] px-[26px] py-[13px] font-semibold text-white transition-[transform,box-shadow] duration-350 ease-in-out hover:-translate-y-[3px] hover:shadow-[0_15px_25px_rgba(239,68,68,.3)] active:scale-[.96] max-md:w-full"
+            className="cursor-pointer rounded-xl border-0 bg-[linear-gradient(135deg,#ef4444,#dc2626)] px-[26px] py-[13px] font-semibold text-white brightness-100 transition-[transform,box-shadow,filter] duration-350 ease-in-out hover:-translate-y-[3px] hover:brightness-75 hover:shadow-[0_15px_25px_rgba(239,68,68,.3)] active:scale-[.96] max-md:w-full"
             onClick={onConfirm}
           >
             Delete

@@ -37,7 +37,7 @@ function UserListPagination({
       <div className="flex flex-wrap items-center gap-2 max-[992px]:w-full max-[992px]:justify-center">
 
         <button
-          className="cursor-pointer rounded-[10px] border-0 bg-[linear-gradient(135deg,#2563eb,#4f46e5)] px-[18px] py-[11px] font-semibold text-white transition-[transform,box-shadow] duration-350 ease-in-out hover:not-disabled:-translate-y-0.5 hover:not-disabled:shadow-[0_12px_25px_rgba(37,99,235,.28)] active:scale-[.96] disabled:cursor-not-allowed disabled:opacity-45 max-[576px]:px-3.5 max-[576px]:py-2.5 max-[576px]:text-[13px]"
+          className="cursor-pointer rounded-[10px] border-0 bg-[linear-gradient(135deg,#2563eb,#4f46e5)] px-[18px] py-[11px] font-semibold text-white brightness-100 transition-[transform,box-shadow,filter] duration-350 ease-in-out hover:not-disabled:-translate-y-0.5 hover:not-disabled:brightness-75 hover:not-disabled:shadow-[0_12px_25px_rgba(37,99,235,.28)] active:scale-[.96] disabled:cursor-not-allowed disabled:opacity-45 max-[576px]:px-3.5 max-[576px]:py-2.5 max-[576px]:text-[13px]"
           disabled={currentPage === 1}
           onClick={() =>
             setCurrentPage(currentPage - 1)
@@ -51,8 +51,8 @@ function UserListPagination({
             key={page}
             className={
               currentPage === page
-                ? "h-[42px] w-[42px] cursor-pointer rounded-full border-0 bg-[linear-gradient(135deg,#2563eb,#4f46e5)] font-semibold text-white shadow-[0_10px_20px_rgba(37,99,235,.25)] transition duration-350 ease-in-out active:scale-[.96] max-[576px]:h-[38px] max-[576px]:w-[38px] max-[576px]:text-[13px]"
-                : "h-[42px] w-[42px] cursor-pointer rounded-full border-0 bg-[#e2e8f0] font-semibold transition duration-350 ease-in-out hover:bg-[#bfdbfe] active:scale-[.96] max-[576px]:h-[38px] max-[576px]:w-[38px] max-[576px]:text-[13px]"
+                ? "h-[42px] w-[42px] cursor-pointer rounded-full border-0 bg-[linear-gradient(135deg,#2563eb,#4f46e5)] font-semibold text-white brightness-100 shadow-[0_10px_20px_rgba(37,99,235,.25)] transition duration-350 ease-in-out hover:brightness-75 active:scale-[.96] max-[576px]:h-[38px] max-[576px]:w-[38px] max-[576px]:text-[13px]"
+                : "h-[42px] w-[42px] cursor-pointer rounded-full border-0 bg-[#e2e8f0] font-semibold brightness-100 transition duration-350 ease-in-out hover:bg-[#bfdbfe] hover:brightness-75 active:scale-[.96] max-[576px]:h-[38px] max-[576px]:w-[38px] max-[576px]:text-[13px]"
             }
             onClick={() =>
               setCurrentPage(page)
@@ -63,7 +63,7 @@ function UserListPagination({
         ))}
 
         <button
-          className="cursor-pointer rounded-[10px] border-0 bg-[linear-gradient(135deg,#2563eb,#4f46e5)] px-[18px] py-[11px] font-semibold text-white transition-[transform,box-shadow] duration-350 ease-in-out hover:not-disabled:-translate-y-0.5 hover:not-disabled:shadow-[0_12px_25px_rgba(37,99,235,.28)] active:scale-[.96] disabled:cursor-not-allowed disabled:opacity-45 max-[576px]:px-3.5 max-[576px]:py-2.5 max-[576px]:text-[13px]"
+          className="cursor-pointer rounded-[10px] border-0 bg-[linear-gradient(135deg,#2563eb,#4f46e5)] px-[18px] py-[11px] font-semibold text-white brightness-100 transition-[transform,box-shadow,filter] duration-350 ease-in-out hover:not-disabled:-translate-y-0.5 hover:not-disabled:brightness-75 hover:not-disabled:shadow-[0_12px_25px_rgba(37,99,235,.28)] active:scale-[.96] disabled:cursor-not-allowed disabled:opacity-45 max-[576px]:px-3.5 max-[576px]:py-2.5 max-[576px]:text-[13px]"
           disabled={
             currentPage === totalPages ||
             totalPages === 0

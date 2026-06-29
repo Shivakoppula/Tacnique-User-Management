@@ -14,14 +14,14 @@ function LogoutConfirmationModal({ onConfirm, onCancel }) {
 
         <div className="flex justify-center gap-[15px] max-[576px]:flex-col">
           <button
-            className="cursor-pointer rounded-xl border-0 bg-[linear-gradient(135deg,#ef4444,#dc2626)] px-[30px] py-[13px] font-semibold text-white transition-[transform,box-shadow] duration-350 ease-in-out hover:-translate-y-0.5 hover:shadow-[0_12px_24px_rgba(239,68,68,.3)] active:scale-[.96] max-[576px]:w-full"
+            className="cursor-pointer rounded-xl border-0 bg-[linear-gradient(135deg,#ef4444,#dc2626)] px-[30px] py-[13px] font-semibold text-white brightness-100 transition-[transform,box-shadow,filter] duration-350 ease-in-out hover:-translate-y-0.5 hover:brightness-75 hover:shadow-[0_12px_24px_rgba(239,68,68,.3)] active:scale-[.96] max-[576px]:w-full"
             onClick={onCancel}
           >
             No
           </button>
 
           <button
-            className="cursor-pointer rounded-xl border-0 bg-[linear-gradient(135deg,#22c55e,#16a34a)] px-[30px] py-[13px] font-semibold text-white transition-[transform,box-shadow] duration-350 ease-in-out hover:-translate-y-0.5 hover:shadow-[0_12px_24px_rgba(34,197,94,.3)] active:scale-[.96] max-[576px]:w-full"
+            className="cursor-pointer rounded-xl border-0 bg-[linear-gradient(135deg,#22c55e,#16a34a)] px-[30px] py-[13px] font-semibold text-white brightness-100 transition-[transform,box-shadow,filter] duration-350 ease-in-out hover:-translate-y-0.5 hover:brightness-75 hover:shadow-[0_12px_24px_rgba(34,197,94,.3)] active:scale-[.96] max-[576px]:w-full"
             onClick={onConfirm}
           >
             Yes

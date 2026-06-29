@@ -15,14 +15,14 @@ function DashboardHeader({ onAdd, onLogout }) {
       <div className="relative z-[2] flex items-center gap-3 max-md:w-full max-md:flex-col">
 
         <button
-          className="cursor-pointer rounded-[50px] border-0 bg-white px-6 py-3.5 text-[15px] font-bold text-[#2563eb] shadow-[0_10px_25px_rgba(0,0,0,.15)] transition-[transform,box-shadow] duration-350 ease-in-out hover:-translate-y-1 hover:shadow-[0_16px_35px_rgba(0,0,0,.22)] active:scale-[.96] max-md:w-full"
+          className="cursor-pointer rounded-[50px] border-0 bg-white px-6 py-3.5 text-[15px] font-bold text-[#2563eb] brightness-100 shadow-[0_10px_25px_rgba(0,0,0,.15)] transition-[transform,box-shadow,filter] duration-350 ease-in-out hover:-translate-y-1 hover:brightness-75 hover:shadow-[0_16px_35px_rgba(0,0,0,.22)] active:scale-[.96] max-md:w-full"
           onClick={onAdd}
         >
           + Add User
         </button>
 
         <button
-          className="cursor-pointer rounded-[50px] border-0 bg-[#ef4444] px-6 py-3.5 text-[15px] font-bold text-white shadow-[0_10px_25px_rgba(239,68,68,.25)] transition-[transform,box-shadow] duration-350 ease-in-out hover:-translate-y-1 hover:bg-[#dc2626] hover:shadow-[0_16px_35px_rgba(239,68,68,.35)] active:scale-[.96] max-md:w-full"
+          className="cursor-pointer rounded-[50px] border-0 bg-[#ef4444] px-6 py-3.5 text-[15px] font-bold text-white brightness-100 shadow-[0_10px_25px_rgba(239,68,68,.25)] transition-[transform,box-shadow,filter] duration-350 ease-in-out hover:-translate-y-1 hover:bg-[#dc2626] hover:brightness-75 hover:shadow-[0_16px_35px_rgba(239,68,68,.35)] active:scale-[.96] max-md:w-full"
           onClick={onLogout}
         >
           Logout
